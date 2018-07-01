@@ -1,0 +1,16 @@
+#配置服务器端口号
+server:
+  port: 8888
+
+spring:
+  application:
+    name: eureka-server
+#主机名如果可以在配置时确定（否则会从OS原语中猜出）
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
